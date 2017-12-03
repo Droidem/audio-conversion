@@ -24,7 +24,7 @@ echo.
 	ffmpeg -v quiet -stats -i "%%~nF".mkv -vcodec copy -an "%%~nF".-.mkv
 
 echo.
-echo * Merging Ac3 & Old Audio Stream to "%%~nF"
+echo * Merging Ac3 and Old Audio Stream to "%%~nF"
 echo.
 	ffmpeg -v quiet -stats -i "%%~nF".-.mkv -i "%%~nF".ac3 -i "%%~nF".audio -map 0 -map 1 -map 2 -codec copy output %%~nF.Converted.mkv
 
