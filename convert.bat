@@ -19,8 +19,13 @@ echo.
       ffmpeg -v quiet -i "%%~nF".dts -c:a ac3 "%%~nF".ac3
 
 echo.
+echo * Removing Audio Streams from "%%~nF"
+echo.
+      ffmpeg -v quiet -stats -i "%%~nF".mkv -vcodec copy -an "%%~nF".-.mkv
+
+echo.
 echo * Removing temporary file
-      del "%%~nF".dts					
+::      del "%%~nF".dts					
                             )
 echo.
 echo * All Finished
